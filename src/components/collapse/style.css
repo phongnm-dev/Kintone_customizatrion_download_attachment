@@ -1,0 +1,21 @@
+.downloadAttachment_collapse__content {
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.downloadAttachment_collapse__expander {
+  position: relative;
+  }
+.downloadAttachment_collapse__arrow {
+  margin-right: 1em;
+}
+
+.downloadAttachment_collapse__arrow:before {
+  content: ">";
+  position: absolute;
+  transition: all 0.5s;
+}
+
+.active>.downloadAttachment_collapse__arrow:before {
+  transform: rotate(90deg);
+}
