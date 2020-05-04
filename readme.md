@@ -27,7 +27,7 @@ $ kintone-plugin-packer [OPTIONS] PLUGIN_DIR
 After build,
 - Upload dist/Kintone_customization_downloadAttachment.min.css & dist/Kintone_customization_downloadAttachment.min.js to Kintone app - JavaScript and CSS Customization.
 - Add blank field to your Kintone Application and specify blank field ID in ./src/config/index.ts
-- Click on button render in blank space to open download popup:
+- Click on button render in blank space to open download popup.
 - Select file and click download button.
 related document: [Kintone customization css and javascript](https://get.kintone.help/k/en/user/app_settings/js_customize.html)
 
