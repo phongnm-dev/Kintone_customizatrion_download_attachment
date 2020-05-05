@@ -106,7 +106,7 @@ declare const kintone: any;
 
   kintone.events.on('app.record.detail.show', async (event: any) => {
     const record = event.record;
-        // create footer
+    // create footer
     const popupFooter = document.createElement('div');
     popupFooter.classList.add('downloadAttachment__actions');
 

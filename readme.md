@@ -22,7 +22,7 @@ Output
 ## Usage:
 
 ```console
-$ kintone-plugin-packer [OPTIONS] PLUGIN_DIR
+$ npm run build
 ```
 After build,
 - Upload dist/Kintone_customization_downloadAttachment.min.css & dist/Kintone_customization_downloadAttachment.min.js to Kintone app - JavaScript and CSS Customization.
@@ -35,9 +35,16 @@ related document: [Kintone customization css and javascript](https://get.kintone
 ./src/config/index.ts
 | Name | Type | Description |
 | ------------- |:-------------:| -----:|
-| SPECIFIC_TEXT | String | Text to include in file name.|
+| BLANK_FIELD_ID | String | Id of the blank field to render open popup button  |
+| SPECIFIC_TEXT | String | Text to include in file's name. |
 | SEPARATOR_CHARACTER  | String | Separator character for file name, value must be one of allowed values:<br/>[-, =, +, $,_]<br/>Default:  -|
-| FILE_NAME_FORMAT_TYPE | Interger | Options for file name format with mapping</br>value: format:</br>1: [AppID] + [Record ID] + [Config-1] + [current datetime]</br>2: [Record ID] + [Config-1] + [current datetime]</br>3: [Config-1] + [current datetime]</br>Default: 1. [AppID] + [Record ID] + [Config-1] + [current datetime]
+| FILE_NAME_FORMAT_TYPE | Interger | Options for file name format with mapping</br>value: format:</br>1: [AppID] + [Record ID] + [SPECIFIC_TEXT] + [current datetime]</br>2: [Record ID] + [SPECIFIC_TEXT] + [current datetime]</br>3: [SPECIFIC_TEXT] + [current datetime]</br>Default: 1. [AppID] + [Record ID] + [SPECIFIC_TEXT] + [current datetime]
+- On record detail screen, a button for openning download attachment popup will be render in blank field with id config in [BLANK_FIELD_ID]
+- All selected files compressed in one file with format file name specify in FILE_NAME_FORMAT_TYPE, with seperator is specify in SEPARATOR_CHARACTER, mapping value format:
+[AppID]: Id of Kintone app.
+[Record ID]: Id of current record.
+[SPECIFIC_TEXT]: Value of SPECIFIC_TEXT, ignore if empty.
+[current datetime]: Current datetime with format MM/dd/yyyy HH:mm:ss
 
 ## License:
 MIT Licence
