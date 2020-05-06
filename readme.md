@@ -2,12 +2,13 @@ Kintone Customization - Download record's attachment
 ====
 
 Written in TypeScript
-## How to build
-### Requirement
+
+## Requirement
 ```
 * Node.js
 * Git
 ```
+## How to build
 ```
 $ git clone https://github.com/phongnm-dev/Kintone_practice_2.git
 $ cd Kintone_customizatrion_download_attachment
@@ -20,10 +21,6 @@ Output
 ./dist/Kintone_customization_downloadAttachment.min.js
 ```
 ## Usage:
-
-```console
-$ npm run build
-```
 After build,
 - Upload dist/Kintone_customization_downloadAttachment.min.css & dist/Kintone_customization_downloadAttachment.min.js to Kintone app - JavaScript and CSS Customization.
 - Add blank field to your Kintone Application and specify blank field ID in ./src/config/index.ts

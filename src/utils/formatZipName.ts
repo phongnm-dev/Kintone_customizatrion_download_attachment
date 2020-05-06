@@ -1,11 +1,12 @@
 import Config from '../config';
+import {LIST_SEREPRATOR} from '../constants';
 
 declare const kintone: any;
 
 const formatZipName = (recordId: string | number) => {
   const appId = kintone.app.getId();
   const currentDateTime = (new Date()).toISOString().slice(0, 19).replace(/-/g, '_').replace('T', ' ');
-  const SEPARATOR_CHARACTER = ['-', '=', '+', '$', '_'].includes(Config.SEPARATOR_CHARACTER) ?
+  const SEPARATOR_CHARACTER = LIST_SEREPRATOR.includes(Config.SEPARATOR_CHARACTER) ?
     Config.SEPARATOR_CHARACTER : '-';
   let params: Array<string | number> = [];
   switch (Config.FILE_NAME_FORMAT_TYPE) {

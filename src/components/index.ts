@@ -3,7 +3,7 @@ import Dialog from './dialog';
 import Collapse from './collapse';
 import Checkbox from './checkbox';
 
-import './common/51-modern-default.css';
-import './common/style.css';
+import './style/51-modern-default.css';
+import './style/custom.css';
 
 export {Button, Dialog, Collapse, Checkbox};

@@ -1,4 +1,4 @@
-const Message = {
+const MESSAGE = {
   downloadButton: 'Download Attachments',
   selectAllFields: 'Select all fields',
   selectField: 'Select field',
@@ -15,4 +15,4 @@ const Message = {
   fileSize: (fileSize: string | number) => `File size: ${fileSize}`
 };
 
-export default Message;
+export default MESSAGE;
