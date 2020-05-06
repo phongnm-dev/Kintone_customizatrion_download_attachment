@@ -2,7 +2,9 @@ const path = require('path');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const outputFileName = "Kintone_customization_downloadAttachment"
+
+const outputFileName = 'Kintone_customization_downloadAttachment';
+
 module.exports = {
   entry: './src/index.ts',
   optimization: {
@@ -38,6 +40,6 @@ module.exports = {
   },
   output: {
     filename: `${outputFileName}.min.js`,
-    path: path.resolve(__dirname, 'dist'),
-  },
+    path: path.resolve(__dirname, 'dist')
+  }
 };

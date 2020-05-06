@@ -1,28 +1,25 @@
-import uiUltil from './ultil';
+import handleDownloadButton from './handleDownloadButton';
+import handleDownloadPopup from './handleDownloadPopup';
+import {AttachmentField} from '../../types';
 
-function createPopup(attachmentFields: any) {
-  const estimateContent = uiUltil.handleEstimateContent();
-  const fileSelectContent = uiUltil.handleFileSelectContent(attachmentFields);
-  const popupBody = document.createElement('div');
-  const popupTitle = Message.popupTitle(appDetail.name, record.Record_number.value);
-  popupBody.appendChild(fileSelectContent.element);
-  popupBody.appendChild(estimateContent.element);
-  const popupFooter = uiUltil.handlePopupFooter();
-  const popup = new Dialog(popupTitle, popupBody, popupFooter);
+type Params = {
+  attachmentFields: AttachmentField[];
+  appName: string;
+  recordNumber: number;
+  blankFieldElement: HTMLElement;
+}
+
+function uiController(params: Params) {
+  const downloadPopup = handleDownloadPopup({
+    attachmentFields: params.attachmentFields,
+    appName: params.appName,
+    recordNumber: params.recordNumber
+  });
+  const downloadButton = handleDownloadButton(params.blankFieldElement);
+  document.body.appendChild(downloadPopup.element.render());
   return {
-    element: popup,
-    content: {
-      popupBody,
-      
-    }
-  }
-}
-
-function createDownloadButton() {
-
-}
-
-function uiController() {
-  
+    downloadPopup,
+    downloadButton
+  };
 }
 export default uiController;

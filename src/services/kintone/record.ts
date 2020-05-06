@@ -1,12 +1,11 @@
 import {saveAs} from 'file-saver';
 import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
-
+import {AttachmentFile} from '../../types';
 declare const kintone: any;
 
-async function downloadAttachmentFiles(selectedFiles: any[], isCreateSubfolder: boolean, zipName: string) {
+async function downloadAttachmentFiles(selectedFiles: AttachmentFile[], isCreateSubfolder: boolean, zipName: string) {
   const zip = new JSZip();
-  // const zipName = FILE_NAME_FORMAT_TYPE();
 
   try {
     // create blob url
@@ -34,7 +33,7 @@ async function downloadAttachmentFiles(selectedFiles: any[], isCreateSubfolder: 
 }
 
 // Get blob url
-function addFileURL(file) {
+function addFileURL(file: AttachmentFile) {
   return new kintone.Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     const params = {

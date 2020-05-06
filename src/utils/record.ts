@@ -22,7 +22,7 @@ function getTotalFileSize(fileList: any[]) {
 
   let fileSize = '';
   if (totalSize < 999) { // less than 1KB
-    fileSize = String(totalSize);
+    fileSize = String(totalSize) + 'B';
   } else if (totalSize < 999999) { // less than 1MB
     fileSize = (totalSize / 1000) + 'K';
   } else if (totalSize < 999999999) { // less than 1GB
