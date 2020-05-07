@@ -1,4 +1,4 @@
-import {RecordUtil} from '../../utils';
+import {RecordUtil, TextUltil} from '../../utils';
 import {MESSAGE} from '../../constants';
 import getSelectedFiles from '../../utils/getSelectedFiles';
 import {FileSelectComponent, EstimateComponent, AttachmentField} from '../../types';
@@ -18,25 +18,25 @@ function registerEstimateEvent(params: Params) {
 
   fileSelectContent.selectAllCheckBox.on('click', () => {
     const selectedFileCount = getSelectedFiles(fileSelectContent.listCheckboxs, params.attachmentFields).length;
-    estimateTitle.innerText = MESSAGE.estimateTitle(selectedFileCount);
+    estimateTitle.innerText = TextUltil.getEstimateTitle(selectedFileCount);
   });
 
   fileSelectContent.listCheckboxs.forEach((field) => {
     field.fieldCheckbox.on('click', () => {
       const selectedFileCount = getSelectedFiles(fileSelectContent.listCheckboxs, params.attachmentFields).length;
-      estimateTitle.innerText = MESSAGE.estimateTitle(selectedFileCount);
+      estimateTitle.innerText = TextUltil.getEstimateTitle(selectedFileCount);
     });
     field.fileCheckboxs.forEach((file) => {
       file.on('click', () => {
         const selectedFileCount = getSelectedFiles(fileSelectContent.listCheckboxs, params.attachmentFields).length;
-        estimateTitle.innerText = MESSAGE.estimateTitle(selectedFileCount);
+        estimateTitle.innerText = TextUltil.getEstimateTitle(selectedFileCount);
       });
     });
   });
 
   estimateButton.on('click', () => {
     const selectedFiles = getSelectedFiles(fileSelectContent.listCheckboxs, params.attachmentFields);
-    fileSizeLabel.innerText = MESSAGE.fileSize(RecordUtil.getTotalFileSize(selectedFiles));
+    fileSizeLabel.innerText = TextUltil.getFileSizeLabel(RecordUtil.getTotalFileSize(selectedFiles));
   });
 }
 

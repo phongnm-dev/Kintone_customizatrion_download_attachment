@@ -6,7 +6,7 @@ import {MESSAGE} from '../../../../constants';
 function handleNoAttachmentField() {
   const popupBodyWrapper = document.createElement('div');
   const popupNoAttachmentLabel = document.createElement('p');
-  popupNoAttachmentLabel.innerText = MESSAGE.noAttachmentField;
+  popupNoAttachmentLabel.innerText = MESSAGE.NO_ATTACHMENT_FIELD;
   popupBodyWrapper.appendChild(popupNoAttachmentLabel);
   return {
     wrapper: popupBodyWrapper,

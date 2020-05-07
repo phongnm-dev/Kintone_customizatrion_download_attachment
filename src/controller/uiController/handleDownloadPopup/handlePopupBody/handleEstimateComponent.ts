@@ -1,14 +1,15 @@
 import {Button, Checkbox} from '../../../../components';
+import {TextUltil} from '../../../../utils';
 import {MESSAGE} from '../../../../constants';
 import {EstimateComponent} from '../../../../types';
 
-function handleEstimateComponent(fileCount: number) {
+function handleEstimateComponent(fileCount: number): EstimateComponent {
   const estimateContent = document.createElement('div');
   estimateContent.classList.add('downloadAttachment__estimate');
   const estimateTitle = document.createElement('p');
-  estimateTitle.innerText = MESSAGE.estimateTitle(fileCount);
-  const estimateButton = new Button(MESSAGE.estimateLabel);
-  const subfolderCheckBox = new Checkbox(MESSAGE.isCreateSubfolder, 'downloadAttachments_isCreateSubFolder');
+  estimateTitle.innerText = TextUltil.getEstimateTitle(fileCount);
+  const estimateButton = new Button(MESSAGE.ESTIMATE_LABEL);
+  const subfolderCheckBox = new Checkbox(MESSAGE.IS_CREATE_SUBFOLDER, 'downloadAttachments_isCreateSubFolder');
   const fileSizeLabel = document.createElement('p');
   fileSizeLabel.classList.add('downloadAttachments_fileSizeLabel');
 
@@ -24,7 +25,7 @@ function handleEstimateComponent(fileCount: number) {
       fileSizeLabel: fileSizeLabel,
       subfolderCheckBox: subfolderCheckBox
     }
-  } as EstimateComponent;
+  };
 }
 
 export default handleEstimateComponent;

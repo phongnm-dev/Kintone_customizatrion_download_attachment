@@ -1,18 +1,13 @@
 const MESSAGE = {
-  downloadButton: 'Download Attachments',
-  selectAllFields: 'Select all fields',
-  selectField: 'Select field',
-  estimateLabel: 'Estimate',
-  cancel: 'Cancel',
-  download: 'Download',
-  noAttachmentField: 'No attachment fields found in record.',
-  isCreateSubfolder: 'Create subfolder for each attachment field?',
-  popupTitle: (appName: string, recordId: number) => `Download attachments for record ${recordId} 
-    in app ${appName}`,
-  estimateTitle: (fileCount: string | number) => `${fileCount} files will be added to a compressed zip file for download.
-  Your browser or network may have download file size or type limitations.
-  Estimate compressed file size?`,
-  fileSize: (fileSize: string | number) => `File size: ${fileSize}`
+  DOWNLOAD_BUTTON: 'Download Attachments',
+  SELECT_ALL_FIELDS: 'Select all fields',
+  SELECT_FIELD: 'Select field',
+  ESTIMATE_LABEL: 'Estimate',
+  CANCEL: 'Cancel',
+  DOWNLOAD: 'Download',
+  NO_ATTACHMENT_FIELD: 'No attachment fields found in record.',
+  IS_CREATE_SUBFOLDER: 'Create subfolder for each attachment field?',
+  ERROR: 'Something went wrong, check the console for possible error messages'
 };
 
 export default MESSAGE;
