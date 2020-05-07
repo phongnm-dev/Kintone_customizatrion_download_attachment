@@ -2,6 +2,7 @@ import {saveAs} from 'file-saver';
 import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import {AttachmentFile} from '../../types';
+import {MESSAGE} from '../../constants';
 declare const kintone: any;
 
 async function downloadAttachmentFiles(selectedFiles: AttachmentFile[], isCreateSubfolder: boolean, zipName: string) {
@@ -28,7 +29,8 @@ async function downloadAttachmentFiles(selectedFiles: AttachmentFile[], isCreate
     const zipFile = await zip.generateAsync({type: 'blob'});
     await saveAs(zipFile, zipName);
   } catch (error) {
-    alert(error);
+    console.log(error);
+    alert(`${error.message}\n${MESSAGE.ERROR}`);
   }
 }
 

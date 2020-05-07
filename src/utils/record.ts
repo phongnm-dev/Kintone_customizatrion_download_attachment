@@ -1,8 +1,8 @@
-function getAttachmentsFields(record: any) {
+function getNonEmptyAttachmentsFields(record: any) {
   // get attchment fields of record
   const attachmentFields: any[] = [];
   for (const field in record) {
-    if (record[field].type === 'FILE') {
+    if (record[field].type === 'FILE' && record[field].value.length) {
       const item = {
         fieldCode: field,
         value: record[field].value
@@ -22,11 +22,11 @@ function getTotalFileSize(fileList: any[]) {
 
   let fileSize = '';
   if (totalSize < 999) { // less than 1KB
-    fileSize = String(totalSize) + 'B';
+    fileSize = String(totalSize) + 'Byte';
   } else if (totalSize < 999999) { // less than 1MB
-    fileSize = (totalSize / 1000) + 'K';
+    fileSize = (totalSize / 1000) + 'Kb';
   } else if (totalSize < 999999999) { // less than 1GB
-    fileSize = (totalSize / 1000) + 'M';
+    fileSize = (totalSize / 1000) + 'Mb';
   } else {
     // Limit to 1GB
     fileSize = '>1GB';
@@ -35,4 +35,4 @@ function getTotalFileSize(fileList: any[]) {
   // return file size
 }
 
-export default {getAttachmentsFields, getTotalFileSize};
+export default {getNonEmptyAttachmentsFields, getTotalFileSize};
