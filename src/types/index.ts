@@ -56,12 +56,14 @@ export type PopupFooter = {
 
 export type FieldCheckboxs = {
   fieldCode: string;
+  fieldName: string;
   fieldCheckbox: Checkbox;
   fileCheckboxs: Checkbox[];
 }
 
 export type AttachmentField = {
   fieldCode: string;
+  fieldName: string;
   value: any;
 }
 

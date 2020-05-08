@@ -5,6 +5,7 @@ import {FieldCheckboxs, AttachmentField, FileSelectComponent} from '../../../../
 function createFieldCheckboxList(field: AttachmentField, index: number) {
   const fieldCheckboxs = {} as FieldCheckboxs;
   fieldCheckboxs.fieldCode = field.fieldCode;
+  fieldCheckboxs.fieldName = field.fieldName;
   fieldCheckboxs.fieldCheckbox = new Checkbox(MESSAGE.SELECT_FIELD, `downloadAttachments_selectField__${index}`);
   fieldCheckboxs.fileCheckboxs = [];
   field.value.forEach((file: any, fileIndex: number) => {
@@ -15,7 +16,7 @@ function createFieldCheckboxList(field: AttachmentField, index: number) {
 }
 
 function createFieldCollapse(field: FieldCheckboxs) {
-  const fieldCollapse = new Collapse(field.fieldCode);
+  const fieldCollapse = new Collapse(field.fieldName);
   const collapseContent = document.createElement('div');
   collapseContent.classList.add('downloadAttachment__field');
 

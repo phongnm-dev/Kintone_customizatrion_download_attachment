@@ -14,7 +14,8 @@ kintone.events.on('app.record.detail.show', async (event: any) => {
     return event;
   }
 
-  const attachmentFields = RecordUtil.getNonEmptyAttachmentsFields(event.record);
+  const formFields = await KintoneService.App.getFormFields();
+  const attachmentFields = RecordUtil.getNonEmptyAttachmentsFields(event.record, formFields.properties);
   let appDetail: {name: string};
   try {
     appDetail = await KintoneService.App.getDetail();

@@ -1,10 +1,14 @@
-function getNonEmptyAttachmentsFields(record: any) {
+import {AttachmentField} from '../types';
+
+function getNonEmptyAttachmentsFields(record: any, formFields: any): AttachmentField[] {
   // get attchment fields of record
-  const attachmentFields: any[] = [];
+  const attachmentFields: AttachmentField[] = [];
+
   for (const field in record) {
     if (record[field].type === 'FILE' && record[field].value.length) {
       const item = {
         fieldCode: field,
+        fieldName: formFields[field].label,
         value: record[field].value
       };
       attachmentFields.push(item);
